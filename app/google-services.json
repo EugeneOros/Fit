@@ -1,0 +1,40 @@
+{
+  "project_info": {
+    "project_number": "1024807677423",
+    "firebase_url": "https://form-it-bfe4c.firebaseio.com",
+    "project_id": "form-it-bfe4c",
+    "storage_bucket": "form-it-bfe4c.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:1024807677423:android:6d611ce36144d185871a1a",
+        "android_client_info": {
+          "package_name": "pl.edu.agh.oros.fit"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "1024807677423-f8i9adfeuan29lasb5t2kcai8n27v84h.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyBqPxEP00ADDkJZOQPxHne_4pcEx5YQzKo"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "1024807677423-f8i9adfeuan29lasb5t2kcai8n27v84h.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

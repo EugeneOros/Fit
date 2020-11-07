@@ -4,7 +4,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="#1d1e1f"
+    android:background="@color/dark_gray_main"
     app:flow_verticalAlign="center"
     tools:context=".SplashScreenActivity">
 
@@ -13,26 +13,27 @@
         android:layout_width="130dp"
         android:layout_height="130dp"
         android:layout_centerInParent="true"
-        android:src="@drawable/ic_logo_round" />
+        app:srcCompat="@drawable/ic_logo_round" />
 
     <TextView
         android:id="@+id/logo_text"
-        android:layout_width="248dp"
-        android:layout_height="59dp"
+        android:layout_width="512dp"
+        android:layout_height="65dp"
         android:layout_below="@+id/logo"
         android:layout_alignParentStart="true"
         android:layout_alignParentLeft="true"
         android:layout_alignParentEnd="true"
         android:layout_alignParentRight="true"
-        android:layout_marginStart="78dp"
-        android:layout_marginLeft="78dp"
-        android:layout_marginTop="169dp"
-        android:layout_marginEnd="85dp"
-        android:layout_marginRight="85dp"
-        android:layout_marginBottom="54dp"
-        android:fontFamily="@font/andika"
+        android:layout_alignParentBottom="true"
+        android:layout_marginStart="0dp"
+        android:layout_marginLeft="0dp"
+        android:layout_marginTop="0dp"
+        android:layout_marginEnd="0dp"
+        android:layout_marginRight="0dp"
+        android:layout_marginBottom="0dp"
+        android:fontFamily="@font/logo_font"
         android:gravity="center"
-        android:text="Form It"
+        android:text="@string/app_name"
         android:textColor="#FFFFFF"
         android:textSize="30dp"
         tools:text="Form It" />
