@@ -13,40 +13,36 @@ import androidx.navigation.ui.AppBarConfiguration
 import androidx.navigation.ui.navigateUp
 import androidx.navigation.ui.setupActionBarWithNavController
 import androidx.navigation.ui.setupWithNavController
+import com.google.android.material.bottomnavigation.BottomNavigationView
 import com.google.android.material.navigation.NavigationView
 import kotlinx.android.synthetic.main.activity_main.*
 import kotlinx.android.synthetic.main.bottom_nav.*
 
 
 class MainActivity : AppCompatActivity(){
-//    lateinit var toggle: ActionBarDrawerToggle
-//    lateinit var navController: NavController
-//    lateinit var drawerLayout: DrawerLayout
+
     private lateinit var appBarConfiguration: AppBarConfiguration
-//
-//    lateinit var listener: NavController.OnDestinationChangedListener
+
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_main)
         val toolbar: Toolbar = findViewById(R.id.toolbar)
         setSupportActionBar(toolbar)
-//        bottom_nav.itemIconTintList = null
 
-        val drawerLayout: DrawerLayout = findViewById(R.id.drawer_layout)
-        val navView: NavigationView = findViewById(R.id.nav_view)
+        val navView: BottomNavigationView  = findViewById(R.id.nav_bottom_view)
         val navController = findNavController(R.id.nav_host_fragment)
-        nav_view.setupWithNavController(navController)
+        nav_bottom_view.setupWithNavController(navController)
+        nav_bottom_view.itemIconTintList = null
 
         appBarConfiguration = AppBarConfiguration(setOf(
-            R.id.nav_home, R.id.nav_settings, R.id.nav_about), drawerLayout)
+            R.id.nav_people, R.id.nav_teams, R.id.nav_tournament, R.id.nav_settings))
         setupActionBarWithNavController(navController, appBarConfiguration)
         navView.setupWithNavController(navController)
 
     }
 
     override fun onCreateOptionsMenu(menu: Menu): Boolean {
-        // Inflate the menu; this adds items to the action bar if it is present.
         menuInflater.inflate(R.menu.tool_bar_menu, menu)
         return true
     }

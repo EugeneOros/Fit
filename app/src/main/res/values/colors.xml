@@ -13,6 +13,7 @@
     <color name="bottom_nav_fill">#A4347F</color>
     <color name="bottom_nav_fill_shadow">#B8639C</color>
     <color name="bottom_nav_empty">#2C426A</color>
+    <color name="status_bar">#A4347F</color>
 
     <color name="colorPrimary">#ffff00</color>
     <color name="colorPrimaryDark">#ff00ff</color>

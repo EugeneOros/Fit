@@ -3,6 +3,7 @@ package pl.edu.agh.oros.fit.fragments
 import android.os.Bundle
 import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
+import android.view.Menu
 import android.view.View
 import android.view.ViewGroup
 import pl.edu.agh.oros.fit.R
@@ -24,6 +25,7 @@ class TournamentFragment : Fragment() {
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
+        setHasOptionsMenu(true);
         arguments?.let {
             param1 = it.getString(ARG_PARAM1)
             param2 = it.getString(ARG_PARAM2)
@@ -36,6 +38,14 @@ class TournamentFragment : Fragment() {
     ): View? {
         // Inflate the layout for this fragment
         return inflater.inflate(R.layout.fragment_tournament, container, false)
+    }
+
+    override fun onPrepareOptionsMenu(menu: Menu) {
+        menu.setGroupVisible(R.id.people_tool_group, false)
+        menu.setGroupVisible(R.id.teams_tool_group, false)
+        menu.setGroupVisible(R.id.tournament_tool_group, true)
+        menu.setGroupVisible(R.id.settings_tool_group, false)
+        super.onPrepareOptionsMenu(menu)
     }
 
     companion object {
