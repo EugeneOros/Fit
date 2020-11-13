@@ -36,8 +36,10 @@ class PeopleFragment : Fragment() {
         inflater: LayoutInflater, container: ViewGroup?,
         savedInstanceState: Bundle?
     ): View? {
+        val view = inflater.inflate(R.layout.fragment_people, container, false)
+
         // Inflate the layout for this fragment
-        return inflater.inflate(R.layout.fragment_people, container, false)
+        return view
     }
 
     override fun onPrepareOptionsMenu(menu: Menu) {
