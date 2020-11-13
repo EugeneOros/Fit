@@ -15,6 +15,7 @@ import androidx.navigation.ui.setupActionBarWithNavController
 import androidx.navigation.ui.setupWithNavController
 import com.google.android.material.navigation.NavigationView
 import kotlinx.android.synthetic.main.activity_main.*
+import kotlinx.android.synthetic.main.bottom_nav.*
 
 
 class MainActivity : AppCompatActivity(){
@@ -30,6 +31,7 @@ class MainActivity : AppCompatActivity(){
         setContentView(R.layout.activity_main)
         val toolbar: Toolbar = findViewById(R.id.toolbar)
         setSupportActionBar(toolbar)
+//        bottom_nav.itemIconTintList = null
 
         val drawerLayout: DrawerLayout = findViewById(R.id.drawer_layout)
         val navView: NavigationView = findViewById(R.id.nav_view)
@@ -45,7 +47,7 @@ class MainActivity : AppCompatActivity(){
 
     override fun onCreateOptionsMenu(menu: Menu): Boolean {
         // Inflate the menu; this adds items to the action bar if it is present.
-        menuInflater.inflate(R.menu.drawer_nav_menu, menu)
+        menuInflater.inflate(R.menu.tool_bar_menu, menu)
         return true
     }
 
@@ -56,6 +58,17 @@ class MainActivity : AppCompatActivity(){
     }
 
 
+    override fun onOptionsItemSelected(item: MenuItem): Boolean {
+        when(item.itemId){
+            R.id.refresh_item -> {
+                Toast.makeText(this, "Manu clicked", Toast.LENGTH_SHORT).show()
+            }
+            R.id.search_item -> {
+                Toast.makeText(this, "Settings clicked", Toast.LENGTH_SHORT).show()
+            }
+        }
+        return super.onOptionsItemSelected(item)
+    }
 //    override fun onCreateOptionsMenu(menu: Menu?): Boolean {
 //        super.onCreateOptionsMenu(menu)
 //        menuInflater.inflate(R.menu.drawer_nav_menu, menu)
@@ -76,7 +89,7 @@ class MainActivity : AppCompatActivity(){
 //        drawer_layout.closeDrawer(GravityCompat.START)
 //        return true
 //    }
-//
+
 //    private fun setCurrentFragment(fragment: Fragment){
 //        supportFragmentManager.beginTransaction().apply {
 //            replace(R.id.main_frame_layout, fragment)
@@ -86,27 +99,6 @@ class MainActivity : AppCompatActivity(){
 
 
 
-
-
-
-
-
-
-
-
-
-
-    //    override fun onOptionsItemSelected(item: MenuItem): Boolean {
-//        when(item.itemId){
-//            R.id.about_item -> {
-//                Toast.makeText(this, "Manu clicked", Toast.LENGTH_SHORT).show()
-//            }
-//            R.id.settings_item -> {
-//                Toast.makeText(this, "Settings clicked", Toast.LENGTH_SHORT).show()
-//            }
-//        }
-//        return super.onOptionsItemSelected(item)
-//    }
 }
 
 // in onCreate

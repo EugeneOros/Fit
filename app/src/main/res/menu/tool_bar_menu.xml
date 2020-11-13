@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+    <group
+        android:id="@+id/people_tool_group">
+        <item
+            android:id="@+id/search_item"
+            android:icon="@drawable/ic_search"
+            android:title="@string/tool_search"
+            app:showAsAction="ifRoom"/>
+        <item
+            android:id="@+id/add_item"
+            android:icon="@drawable/ic_add"
+            android:title="@string/tool_refresh"
+            app:showAsAction="ifRoom"/>
+    </group>
+
+    <group
+        android:id="@+id/teams_tool_group">
+        <item
+            android:id="@+id/refresh_item"
+            android:icon="@drawable/ic_refresh"
+            android:title="@string/tool_refresh"
+            app:showAsAction="ifRoom"/>
+    </group>
+
+    <group
+        android:id="@+id/tournament_tool_group">
+
+    </group>
+
+    <group
+        android:id="@+id/settings_tool_group">
+
+    </group>
+
+</menu>
