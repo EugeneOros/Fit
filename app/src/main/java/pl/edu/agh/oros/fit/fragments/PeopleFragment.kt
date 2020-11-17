@@ -1,11 +1,17 @@
 package pl.edu.agh.oros.fit.fragments
 
+import android.app.AlertDialog
 import android.os.Bundle
+import android.view.*
 import androidx.fragment.app.Fragment
-import android.view.LayoutInflater
-import android.view.Menu
-import android.view.View
-import android.view.ViewGroup
+import android.widget.GridLayout
+import android.widget.Toast
+import androidx.recyclerview.widget.GridLayoutManager
+import com.google.firebase.database.DatabaseReference
+import com.google.firebase.database.FirebaseDatabase
+import kotlinx.android.synthetic.main.add_dialog.*
+import kotlinx.android.synthetic.main.add_dialog.view.*
+import kotlinx.android.synthetic.main.fragment_people.*
 import pl.edu.agh.oros.fit.R
 
 // TODO: Rename parameter arguments, choose names that match
@@ -22,10 +28,20 @@ class PeopleFragment : Fragment() {
     // TODO: Rename and change types of parameters
     private var param1: String? = null
     private var param2: String? = null
+    private lateinit var peopleRef: DatabaseReference
+    private lateinit var addAlertDialog:AlertDialog
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setHasOptionsMenu(true);
+
+        val firebase = FirebaseDatabase.getInstance()
+        peopleRef = firebase.getReference("people")
+
+
+//        recyclerView_people.layoutManager = GridLayoutManager()
+
+
         arguments?.let {
             param1 = it.getString(ARG_PARAM1)
             param2 = it.getString(ARG_PARAM2)
@@ -48,6 +64,41 @@ class PeopleFragment : Fragment() {
         menu.setGroupVisible(R.id.tournament_tool_group, false)
         menu.setGroupVisible(R.id.settings_tool_group, false)
         super.onPrepareOptionsMenu(menu)
+    }
+
+    override fun onOptionsItemSelected(item: MenuItem): Boolean {
+        when(item.itemId){
+            R.id.add_item -> {
+                val addDialogView = LayoutInflater.from(activity).inflate(R.layout.add_dialog, null)
+                val addBilder = AlertDialog.Builder(activity)
+                        .setView(addDialogView)
+                        .setTitle("Add Person")
+                addAlertDialog = addBilder.show()
+
+                addDialogView.add_cancel_button.setOnClickListener{
+                    addAlertDialog.dismiss()
+                }
+                addDialogView.add_submit_button.setOnClickListener{
+                    addAlertDialog.dismiss()
+                }
+//                val addDialogView = LayoutInflater.from(activity).inflate(R.layout.add_dialog, null)
+//                val addBilder = AlertDialog.Builder(activity)
+//                        .setView(addDialogView)
+//                        .setTitle("Add Person")
+//                addAlertDialog = addBilder.create()
+//                add_submit_button.setOnClickListener{
+//                    addAlertDialog.dismiss()
+//                }
+//                add_cancel_button.setOnClickListener{
+//                    addAlertDialog.dismiss()
+//                }
+//                Toast.makeText(activity, "Ad clicked", Toast.LENGTH_SHORT).show()
+            }
+            R.id.search_item -> {
+                Toast.makeText(activity, "Search clicked", Toast.LENGTH_SHORT).show()
+            }
+        }
+        return super.onOptionsItemSelected(item)
     }
 
     companion object {

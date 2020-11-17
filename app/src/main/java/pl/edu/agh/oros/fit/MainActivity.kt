@@ -54,17 +54,17 @@ class MainActivity : AppCompatActivity(){
     }
 
 
-    override fun onOptionsItemSelected(item: MenuItem): Boolean {
-        when(item.itemId){
-            R.id.refresh_item -> {
-                Toast.makeText(this, "Manu clicked", Toast.LENGTH_SHORT).show()
-            }
-            R.id.search_item -> {
-                Toast.makeText(this, "Settings clicked", Toast.LENGTH_SHORT).show()
-            }
-        }
-        return super.onOptionsItemSelected(item)
-    }
+//    override fun onOptionsItemSelected(item: MenuItem): Boolean {
+//        when(item.itemId){
+//            R.id.refresh_item -> {
+//                Toast.makeText(this, "Manu clicked", Toast.LENGTH_SHORT).show()
+//            }
+//            R.id.search_item -> {
+//                Toast.makeText(this, "Settings clicked", Toast.LENGTH_SHORT).show()
+//            }
+//        }
+//        return super.onOptionsItemSelected(item)
+//    }
 //    override fun onCreateOptionsMenu(menu: Menu?): Boolean {
 //        super.onCreateOptionsMenu(menu)
 //        menuInflater.inflate(R.menu.drawer_nav_menu, menu)

@@ -30,7 +30,7 @@
                 android:padding="16dp"/>
 
             <Switch
-                android:id="@+id/switch_person"
+                android:id="@+id/person_state"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_weight="1"
@@ -49,11 +49,12 @@
             <TextView
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:id="@+id/person_state"
-                android:text="state"
+                android:id="@+id/person_level"
+                android:text="level"
                 android:textColor="@color/blue_main"
                 android:textSize="15sp"
                 android:padding="16dp"/>
+
 
         </RelativeLayout>
 
