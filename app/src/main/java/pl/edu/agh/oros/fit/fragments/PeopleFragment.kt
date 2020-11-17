@@ -7,14 +7,17 @@ import androidx.fragment.app.Fragment
 import android.widget.GridLayout
 import android.widget.Toast
 import androidx.recyclerview.widget.GridLayoutManager
-import com.google.firebase.database.DatabaseReference
-import com.google.firebase.database.FirebaseDatabase
+import com.google.firebase.database.*
 import kotlinx.android.synthetic.main.add_dialog.*
 import kotlinx.android.synthetic.main.add_dialog.view.*
 import kotlinx.android.synthetic.main.fragment_people.*
+import kotlinx.android.synthetic.main.fragment_people.view.*
+import pl.edu.agh.oros.fit.PeopleAdapter
 import pl.edu.agh.oros.fit.Person
 import pl.edu.agh.oros.fit.R
 import java.util.*
+import kotlin.collections.ArrayList
+import android.widget.Adapter as Adapter
 
 // TODO: Rename parameter arguments, choose names that match
 // the fragment initialization parameters, e.g. ARG_ITEM_NUMBER
@@ -32,6 +35,7 @@ class PeopleFragment : Fragment() {
     private var param2: String? = null
     private lateinit var peopleRef: DatabaseReference
     private lateinit var addAlertDialog:AlertDialog
+    private lateinit var personList: ArrayList<Person>
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -41,7 +45,8 @@ class PeopleFragment : Fragment() {
         peopleRef = firebase.getReference("People")
 
 
-//        recyclerView_people.layoutManager = GridLayoutManager()
+
+//        recyclerView_people.layoutManager = GridLayoutManager(activity, 1)
 
 
         arguments?.let {
@@ -55,6 +60,22 @@ class PeopleFragment : Fragment() {
         savedInstanceState: Bundle?
     ): View? {
         val view = inflater.inflate(R.layout.fragment_people, container, false)
+        view.recyclerView_people.layoutManager = GridLayoutManager(activity, 1)
+        peopleRef.addValueEventListener(object: ValueEventListener{
+            override fun onCancelled(error: DatabaseError) {
+                TODO("Not yet implemented")
+            }
+
+            override fun onDataChange(snapshot: DataSnapshot) {
+                personList = ArrayList()
+                for(i in snapshot.children){
+                    val person = i.getValue(Person::class.java)
+                    personList.add(person!!)
+                }
+                setupRecyclerViewAdapter(personList)
+            }
+
+        })
 
         // Inflate the layout for this fragment
         return view
@@ -113,5 +134,9 @@ class PeopleFragment : Fragment() {
                     putString(ARG_PARAM2, param2)
                 }
             }
+    }
+
+    private fun setupRecyclerViewAdapter(personList: ArrayList<Person>){
+        recyclerView_people. adapter = PeopleAdapter(personList)
     }
 }

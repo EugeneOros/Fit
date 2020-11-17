@@ -3,9 +3,9 @@ package pl.edu.agh.oros.fit
 import android.text.BoringLayout
 
 data class Person(
-        val name: String,
-        val level: String,
-        val state: Boolean
+        val name: String = "",
+        val level: String = "",
+        val state: Boolean = true
 )
 
 
