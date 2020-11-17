@@ -6,15 +6,18 @@
         <item name="colorPrimaryVariant">@color/blue_main</item>
         <item name="colorOnPrimary">@color/pink_main</item>
         <!-- Secondary brand color. -->
-        <item name="colorSecondary">@color/teal_200</item>
-        <item name="colorSecondaryVariant">@color/teal_700</item>
+        <item name="colorSecondary">@color/pink_main</item>
+        <item name="colorSecondaryVariant">@color/purple_main</item>
         <item name="colorOnSecondary">@color/white</item>
     </style>
     
     <style name="Theme.Fit.NoActionBar">
         <item name="windowActionBar">true</item>
         <item name="windowNoTitle">true</item>
+    </style>
 
+    <style name="Theme.Fit.Switch">
+        <item name="colorControlActivated">@color/blue_main</item>
     </style>
 
     <style name="Theme.Fit.SplashScreen" parent="Theme.MaterialComponents.DayNight.NoActionBar">
@@ -26,4 +29,6 @@
 
     <style name="Theme.Fit.PopupOverlay" parent="ThemeOverlay.AppCompat.Light" />
     <style name="Theme.Fit.AppBarOverlay" parent="ThemeOverlay.AppCompat.Dark.ActionBar" />
+
+
 </resources>

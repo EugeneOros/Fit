@@ -5,6 +5,7 @@ import android.os.Bundle
 import android.view.*
 import androidx.fragment.app.Fragment
 import android.widget.GridLayout
+import android.widget.RadioButton
 import android.widget.Toast
 import androidx.recyclerview.widget.GridLayoutManager
 import com.google.firebase.database.*
@@ -15,6 +16,7 @@ import kotlinx.android.synthetic.main.fragment_people.view.*
 import pl.edu.agh.oros.fit.PeopleAdapter
 import pl.edu.agh.oros.fit.Person
 import pl.edu.agh.oros.fit.R
+import pl.edu.agh.oros.fit.SkillLevel
 import java.util.*
 import kotlin.collections.ArrayList
 import android.widget.Adapter as Adapter
@@ -36,6 +38,7 @@ class PeopleFragment : Fragment() {
     private lateinit var peopleRef: DatabaseReference
     private lateinit var addAlertDialog:AlertDialog
     private lateinit var personList: ArrayList<Person>
+    private lateinit var selectedRadioButton: RadioButton
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -103,8 +106,16 @@ class PeopleFragment : Fragment() {
                 }
                 addDialogView.add_submit_button.setOnClickListener{
                     val name = addAlertDialog.add_nameET.text.toString()
-                    val level = addAlertDialog.add_levelET.text.toString()
-                    val peopleFirebaseInput = Person(name, level, true)
+                    var skillLevel: String = "BEGINNER"
+                    selectedRadioButton = addAlertDialog.findViewById(addAlertDialog.radioGroup_skillLevel.checkedRadioButtonId)
+                    when(selectedRadioButton.id){
+                        R.id.radioButton_beginner -> skillLevel = "BEGINNER"
+                        R.id.radioButton_intermediate -> skillLevel = "INTERMEDIATE"
+                        R.id.radioButton_proficient -> skillLevel = "SkillLevel.PROFICIENT"
+                        R.id.radioButton_advanced -> skillLevel = "ADVANCED"
+                        R.id.radioButton_expert -> skillLevel = "EXPERT"
+                    }
+                    val peopleFirebaseInput = Person(name, skillLevel, true)
                     peopleRef.child("${Date().time}").setValue(peopleFirebaseInput)
                     addAlertDialog.dismiss()
                 }

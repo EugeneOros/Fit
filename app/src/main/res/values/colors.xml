@@ -16,8 +16,15 @@
     <color name="status_bar">#A4347F</color>
     <color name="person_background">#dddddd</color>
 
-    <color name="colorPrimary">#ffff00</color>
-    <color name="colorPrimaryDark">#ff00ff</color>
-    <color name="colorAccent">#00ffff</color>
+    <color name="colorPrimary">#2C426A</color>
+    <color name="colorPrimaryDark">#57347F</color>
+    <color name="colorAccent">#A4347F</color>
+
+    <color name="beginner">#0392ce</color>
+    <color name="intermediate">#66b131</color>
+    <color name="proficient">#ffce44</color>
+    <color name="advanced">#fb9902</color>
+    <color name="expert">#dd5044</color>
+
 
 </resources>

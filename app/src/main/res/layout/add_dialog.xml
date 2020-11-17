@@ -2,6 +2,7 @@
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
     android:orientation="vertical">
 
     <EditText
@@ -11,12 +12,94 @@
         android:hint="Enter name"
         android:inputType="textPersonName"/>
 
-    <EditText
-        android:id="@+id/add_levelET"
+    <RadioGroup
+        android:id="@+id/radioGroup_skillLevel"
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:hint="Enter level"
-        android:inputType="textPersonName"/>
+        android:layout_height="wrap_content">
+
+        <RadioButton
+            android:id="@+id/radioButton_beginner"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="10dp"
+            android:layout_marginLeft="10dp"
+            android:background="@drawable/skill_level_selector"
+            android:button="@android:color/transparent"
+            android:checked="true"
+            android:paddingLeft="5dp"
+            android:paddingTop="5dp"
+            android:paddingRight="5dp"
+            android:paddingBottom="5dp"
+            android:text="@string/button_beginner"
+            android:textColor="@color/beginner"
+            app:layout_constraintLeft_toLeftOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/radioButton_advanced" />
+
+        <RadioButton
+            android:id="@+id/radioButton_intermediate"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="10dp"
+            android:layout_marginLeft="10dp"
+            android:background="@drawable/skill_level_selector"
+            android:button="@android:color/transparent"
+            android:paddingLeft="5dp"
+            android:paddingTop="5dp"
+            android:paddingRight="5dp"
+            android:paddingBottom="5dp"
+            android:text="@string/button_intermediate"
+            android:textColor="@color/intermediate" />
+
+        <RadioButton
+            android:id="@+id/radioButton_proficient"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="10dp"
+            android:layout_marginLeft="10dp"
+            android:background="@drawable/skill_level_selector"
+            android:button="@android:color/transparent"
+            android:paddingLeft="5dp"
+            android:paddingTop="5dp"
+            android:paddingRight="5dp"
+            android:paddingBottom="5dp"
+            android:text="@string/button_proficient"
+            android:textColor="@color/proficient"
+            app:layout_constraintLeft_toLeftOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/radioButton_b" />
+
+
+        <RadioButton
+            android:id="@+id/radioButton_advanced"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="10dp"
+            android:layout_marginLeft="10dp"
+            android:background="@drawable/skill_level_selector"
+            android:button="@android:color/transparent"
+            android:paddingLeft="5dp"
+            android:paddingTop="5dp"
+            android:paddingRight="5dp"
+            android:paddingBottom="5dp"
+            android:text="@string/button_advanced"
+            android:textColor="@color/advanced" />
+
+        <RadioButton
+            android:id="@+id/radioButton_expert"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="10dp"
+            android:layout_marginLeft="10dp"
+            android:layout_marginEnd="10dp"
+            android:layout_marginRight="10dp"
+            android:background="@drawable/skill_level_selector"
+            android:button="@android:color/transparent"
+            android:paddingLeft="5dp"
+            android:paddingTop="5dp"
+            android:paddingRight="5dp"
+            android:paddingBottom="5dp"
+            android:text="@string/button_expert"
+            android:textColor="@color/expert" />
+    </RadioGroup>
 
     <LinearLayout
         android:layout_width="match_parent"
@@ -25,12 +108,12 @@
         android:gravity="center">
         <Button
             android:id="@+id/add_submit_button"
-            android:text="Submit"
+            android:text="@string/submit"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"/>
         <Button
             android:id="@+id/add_cancel_button"
-            android:text="Cancel"
+            android:text="@string/cancel"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"/>
 

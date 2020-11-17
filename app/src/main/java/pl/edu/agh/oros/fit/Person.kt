@@ -4,7 +4,7 @@ import android.text.BoringLayout
 
 data class Person(
         val name: String = "",
-        val level: String = "",
+        val level: String = "BEGINNER",
         val state: Boolean = true
 )
 
