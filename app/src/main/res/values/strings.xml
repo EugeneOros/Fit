@@ -16,4 +16,5 @@
     <string name="button_beginner">Beginner</string>
     <string name="submit">Submit</string>
     <string name="cancel">Cancel</string>
+    <string name="choose_skill_level">Choose skill level</string>
 </resources>

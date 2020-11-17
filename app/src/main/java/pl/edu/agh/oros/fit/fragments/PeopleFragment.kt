@@ -1,6 +1,8 @@
 package pl.edu.agh.oros.fit.fragments
 
 import android.app.AlertDialog
+import android.graphics.Color
+import android.graphics.drawable.ColorDrawable
 import android.os.Bundle
 import android.view.*
 import androidx.fragment.app.Fragment
@@ -98,14 +100,14 @@ class PeopleFragment : Fragment() {
                 val addDialogView = LayoutInflater.from(activity).inflate(R.layout.add_dialog, null)
                 val addBilder = AlertDialog.Builder(activity)
                         .setView(addDialogView)
-                        .setTitle("Add Person")
                 addAlertDialog = addBilder.show()
+                addAlertDialog.window!!.setBackgroundDrawable(ColorDrawable(Color.TRANSPARENT))
 
                 addDialogView.add_cancel_button.setOnClickListener{
                     addAlertDialog.dismiss()
                 }
                 addDialogView.add_submit_button.setOnClickListener{
-                    val name = addAlertDialog.add_nameET.text.toString()
+                    val name = addAlertDialog.add_nameET.editText?.text.toString()
                     var skillLevel: String = "BEGINNER"
                     selectedRadioButton = addAlertDialog.findViewById(addAlertDialog.radioGroup_skillLevel.checkedRadioButtonId)
                     when(selectedRadioButton.id){

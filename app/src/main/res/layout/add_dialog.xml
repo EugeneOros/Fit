@@ -2,16 +2,28 @@
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:padding="20dp"
     xmlns:app="http://schemas.android.com/apk/res-auto"
-    android:orientation="vertical">
+    android:orientation="vertical"
+    android:background="@drawable/background_add_dialog">
 
-    <EditText
+    <com.google.android.material.textfield.TextInputLayout
         android:id="@+id/add_nameET"
+        android:theme="@style/TextLabel"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:hint="Enter name"
-        android:inputType="textPersonName"/>
+        android:hint="Name">
 
+        <com.google.android.material.textfield.TextInputEditText
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            />
+    </com.google.android.material.textfield.TextInputLayout>
+
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="@string/choose_skill_level"/>
     <RadioGroup
         android:id="@+id/radioGroup_skillLevel"
         android:layout_width="match_parent"
@@ -23,8 +35,6 @@
             android:layout_height="wrap_content"
             android:layout_marginStart="10dp"
             android:layout_marginLeft="10dp"
-            android:background="@drawable/skill_level_selector"
-            android:button="@android:color/transparent"
             android:checked="true"
             android:paddingLeft="5dp"
             android:paddingTop="5dp"
@@ -33,7 +43,9 @@
             android:text="@string/button_beginner"
             android:textColor="@color/beginner"
             app:layout_constraintLeft_toLeftOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/radioButton_advanced" />
+            app:layout_constraintTop_toBottomOf="@+id/radioButton_advanced"
+            android:buttonTint="@color/beginner"/>
+
 
         <RadioButton
             android:id="@+id/radioButton_intermediate"
@@ -41,14 +53,13 @@
             android:layout_height="wrap_content"
             android:layout_marginStart="10dp"
             android:layout_marginLeft="10dp"
-            android:background="@drawable/skill_level_selector"
-            android:button="@android:color/transparent"
             android:paddingLeft="5dp"
             android:paddingTop="5dp"
             android:paddingRight="5dp"
             android:paddingBottom="5dp"
             android:text="@string/button_intermediate"
-            android:textColor="@color/intermediate" />
+            android:textColor="@color/intermediate"
+            android:buttonTint="@color/intermediate"/>
 
         <RadioButton
             android:id="@+id/radioButton_proficient"
@@ -56,16 +67,13 @@
             android:layout_height="wrap_content"
             android:layout_marginStart="10dp"
             android:layout_marginLeft="10dp"
-            android:background="@drawable/skill_level_selector"
-            android:button="@android:color/transparent"
             android:paddingLeft="5dp"
             android:paddingTop="5dp"
             android:paddingRight="5dp"
             android:paddingBottom="5dp"
             android:text="@string/button_proficient"
             android:textColor="@color/proficient"
-            app:layout_constraintLeft_toLeftOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/radioButton_b" />
+            android:buttonTint="@color/proficient"/>
 
 
         <RadioButton
@@ -74,14 +82,13 @@
             android:layout_height="wrap_content"
             android:layout_marginStart="10dp"
             android:layout_marginLeft="10dp"
-            android:background="@drawable/skill_level_selector"
-            android:button="@android:color/transparent"
             android:paddingLeft="5dp"
             android:paddingTop="5dp"
             android:paddingRight="5dp"
             android:paddingBottom="5dp"
             android:text="@string/button_advanced"
-            android:textColor="@color/advanced" />
+            android:textColor="@color/advanced"
+            android:buttonTint="@color/advanced"/>
 
         <RadioButton
             android:id="@+id/radioButton_expert"
@@ -91,14 +98,13 @@
             android:layout_marginLeft="10dp"
             android:layout_marginEnd="10dp"
             android:layout_marginRight="10dp"
-            android:background="@drawable/skill_level_selector"
-            android:button="@android:color/transparent"
             android:paddingLeft="5dp"
             android:paddingTop="5dp"
             android:paddingRight="5dp"
             android:paddingBottom="5dp"
             android:text="@string/button_expert"
-            android:textColor="@color/expert" />
+            android:textColor="@color/expert"
+            android:buttonTint="@color/expert"/>
     </RadioGroup>
 
     <LinearLayout
@@ -106,16 +112,18 @@
         android:layout_height="wrap_content"
         android:orientation="horizontal"
         android:gravity="center">
-        <Button
-            android:id="@+id/add_submit_button"
-            android:text="@string/submit"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"/>
+
         <Button
             android:id="@+id/add_cancel_button"
-            android:text="@string/cancel"
             android:layout_width="wrap_content"
-            android:layout_height="wrap_content"/>
+            android:layout_height="wrap_content"
+            android:text="@string/cancel" />
+
+        <Button
+            android:id="@+id/add_submit_button"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/submit" />
 
 
     </LinearLayout>

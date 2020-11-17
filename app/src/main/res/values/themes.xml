@@ -27,6 +27,13 @@
         <item name="android:windowContentOverlay">@null</item>
     </style>
 
+    <style name="TextLabel" parent="Widget.MaterialComponents.TextInputLayout.FilledBox">
+        <item name="android:textColorHint">@color/colorPrimaryDark</item>
+        <item name="android:textSize">10sp</item>
+        <item name="colorControlNormal">@color/colorAccent</item>
+        <item name="colorControlActivated">@color/colorPrimary</item>
+    </style>
+
     <style name="Theme.Fit.PopupOverlay" parent="ThemeOverlay.AppCompat.Light" />
     <style name="Theme.Fit.AppBarOverlay" parent="ThemeOverlay.AppCompat.Dark.ActionBar" />
 
