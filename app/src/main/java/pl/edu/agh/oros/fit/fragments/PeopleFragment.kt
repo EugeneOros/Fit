@@ -12,7 +12,9 @@ import com.google.firebase.database.FirebaseDatabase
 import kotlinx.android.synthetic.main.add_dialog.*
 import kotlinx.android.synthetic.main.add_dialog.view.*
 import kotlinx.android.synthetic.main.fragment_people.*
+import pl.edu.agh.oros.fit.Person
 import pl.edu.agh.oros.fit.R
+import java.util.*
 
 // TODO: Rename parameter arguments, choose names that match
 // the fragment initialization parameters, e.g. ARG_ITEM_NUMBER
@@ -36,7 +38,7 @@ class PeopleFragment : Fragment() {
         setHasOptionsMenu(true);
 
         val firebase = FirebaseDatabase.getInstance()
-        peopleRef = firebase.getReference("people")
+        peopleRef = firebase.getReference("People")
 
 
 //        recyclerView_people.layoutManager = GridLayoutManager()
@@ -79,20 +81,12 @@ class PeopleFragment : Fragment() {
                     addAlertDialog.dismiss()
                 }
                 addDialogView.add_submit_button.setOnClickListener{
+                    val name = addAlertDialog.add_nameET.text.toString()
+                    val level = addAlertDialog.add_levelET.text.toString()
+                    val peopleFirebaseInput = Person(name, level, true)
+                    peopleRef.child("${Date().time}").setValue(peopleFirebaseInput)
                     addAlertDialog.dismiss()
                 }
-//                val addDialogView = LayoutInflater.from(activity).inflate(R.layout.add_dialog, null)
-//                val addBilder = AlertDialog.Builder(activity)
-//                        .setView(addDialogView)
-//                        .setTitle("Add Person")
-//                addAlertDialog = addBilder.create()
-//                add_submit_button.setOnClickListener{
-//                    addAlertDialog.dismiss()
-//                }
-//                add_cancel_button.setOnClickListener{
-//                    addAlertDialog.dismiss()
-//                }
-//                Toast.makeText(activity, "Ad clicked", Toast.LENGTH_SHORT).show()
             }
             R.id.search_item -> {
                 Toast.makeText(activity, "Search clicked", Toast.LENGTH_SHORT).show()
