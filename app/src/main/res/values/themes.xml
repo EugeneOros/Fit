@@ -1,5 +1,5 @@
 <resources xmlns:tools="http://schemas.android.com/tools">
-    <style name="Theme.Fit" parent="Theme.AppCompat.Light.NoActionBar">
+    <style name="Theme.Fit" parent="Theme.MaterialComponents.Light.NoActionBar">
         <item name="colorPrimaryDark">@color/pink_main</item>
         <!-- Primary brand color. -->
         <item name="colorPrimary">@color/purple_main</item>
@@ -17,7 +17,7 @@
     </style>
 
     <style name="Theme.Fit.Switch">
-        <item name="colorControlActivated">@color/blue_main</item>
+        <item name="colorControlActivated">@color/main_switch</item>
     </style>
 
     <style name="Theme.Fit.SplashScreen" parent="Theme.MaterialComponents.DayNight.NoActionBar">
@@ -27,7 +27,7 @@
         <item name="android:windowContentOverlay">@null</item>
     </style>
 
-    <style name="TextLabel" parent="Widget.MaterialComponents.TextInputLayout.FilledBox">
+    <style name="TextLabel" parent="Widget.MaterialComponents.TextInputLayout.OutlinedBox">
         <item name="android:textColorHint">@color/colorPrimaryDark</item>
         <item name="android:textSize">10sp</item>
         <item name="colorControlNormal">@color/colorAccent</item>
@@ -38,4 +38,5 @@
     <style name="Theme.Fit.AppBarOverlay" parent="ThemeOverlay.AppCompat.Dark.ActionBar" />
 
 
+    <style name="Theme.Fit.Button" />
 </resources>
