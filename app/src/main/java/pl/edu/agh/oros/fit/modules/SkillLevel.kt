@@ -1,6 +1,4 @@
-package pl.edu.agh.oros.fit
-
-import com.google.firebase.database.PropertyName
+package pl.edu.agh.oros.fit.modules
 
 enum class SkillLevel {
     BEGINNER,

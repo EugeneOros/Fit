@@ -1,17 +1,23 @@
 <?xml version="1.0" encoding="utf-8"?>
 <selector xmlns:android="http://schemas.android.com/apk/res/android">
-    <item
-        android:state_focused="true"
-        android:state_pressed="true"
-        android:drawable="@drawable/button_purple_pressed"
-        android:textColor="@color/main_1"/>
-    <item
-        android:state_focused="false"
-        android:state_pressed="true"
-        android:drawable="@drawable/button_purple_pressed"
-        android:textColor="@color/main_1"/>
-    <item
-        android:drawable="@drawable/button_purple_default"
-        android:textColor="@color/main_3"/>
+    <item android:state_pressed="true">
+        <shape android:shape="rectangle">
+            <stroke android:color="@color/main_1" android:width="2dp"/>
+            <corners android:radius="23dp" />
+        </shape>
+    </item>
 
+    <item android:state_focused="true">
+        <shape android:shape="rectangle">
+            <stroke android:color="@color/main_2" android:width="2dp"/>
+            <corners android:radius="23dp" />
+        </shape>
+    </item>
+
+    <item>
+        <shape android:shape="rectangle">
+            <stroke android:color="@color/main_3" android:width="2dp"/>
+            <corners android:radius="23dp" />
+        </shape>
+    </item>
 </selector>

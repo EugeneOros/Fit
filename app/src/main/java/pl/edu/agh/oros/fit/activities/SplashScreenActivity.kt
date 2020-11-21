@@ -1,11 +1,11 @@
-package pl.edu.agh.oros.fit
+package pl.edu.agh.oros.fit.activities
 
 import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.widget.ImageView
 import android.widget.TextView
-import android.os.Handler
+import pl.edu.agh.oros.fit.R
 
 class SplashScreenActivity : AppCompatActivity() {
     lateinit var logoText : TextView

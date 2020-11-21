@@ -1,11 +1,9 @@
-package pl.edu.agh.oros.fit
-
-import android.text.BoringLayout
+package pl.edu.agh.oros.fit.modules
 
 data class Person(
         val name: String = "",
-        val level: String = "BEGINNER",
-        val state: Boolean = true
+        val level: SkillLevel = SkillLevel.BEGINNER,
+        val active: Boolean = true
 )
 
 

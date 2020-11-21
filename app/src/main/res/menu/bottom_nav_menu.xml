@@ -3,22 +3,22 @@
     xmlns:app="http://schemas.android.com/apk/res-auto">
     <item
         android:id="@+id/nav_people"
-        android:icon="@drawable/people_selector"
+        android:icon="@drawable/selector_people"
         android:title="@string/menu_people"/>
 
     <item
         android:id="@+id/nav_teams"
-        android:icon="@drawable/teams_selector"
+        android:icon="@drawable/selector_teams"
         android:title="@string/menu_teams"/>
 
     <item
         android:id="@+id/nav_tournament"
-        android:icon="@drawable/tournament_selector"
+        android:icon="@drawable/selector_tournament"
         android:title="@string/menu_tournament"/>
 
     <item
         android:id="@+id/nav_settings"
-        android:icon="@drawable/settings_selector"
+        android:icon="@drawable/selector_settings"
         android:title="@string/menu_settings"/>
 
 </menu>

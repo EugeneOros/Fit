@@ -6,7 +6,6 @@ import android.graphics.drawable.ColorDrawable
 import android.os.Bundle
 import android.view.*
 import androidx.fragment.app.Fragment
-import android.widget.GridLayout
 import android.widget.RadioButton
 import android.widget.Toast
 import androidx.recyclerview.widget.GridLayoutManager
@@ -16,12 +15,11 @@ import kotlinx.android.synthetic.main.add_dialog.view.*
 import kotlinx.android.synthetic.main.fragment_people.*
 import kotlinx.android.synthetic.main.fragment_people.view.*
 import pl.edu.agh.oros.fit.PeopleAdapter
-import pl.edu.agh.oros.fit.Person
+import pl.edu.agh.oros.fit.modules.Person
 import pl.edu.agh.oros.fit.R
-import pl.edu.agh.oros.fit.SkillLevel
+import pl.edu.agh.oros.fit.modules.SkillLevel
 import java.util.*
 import kotlin.collections.ArrayList
-import android.widget.Adapter as Adapter
 
 // TODO: Rename parameter arguments, choose names that match
 // the fragment initialization parameters, e.g. ARG_ITEM_NUMBER
@@ -108,14 +106,14 @@ class PeopleFragment : Fragment() {
                 }
                 addDialogView.add_submit_button.setOnClickListener{
                     val name = addAlertDialog.add_nameET.editText?.text.toString()
-                    var skillLevel: String = "BEGINNER"
+                    var skillLevel: SkillLevel = SkillLevel.BEGINNER
                     selectedRadioButton = addAlertDialog.findViewById(addAlertDialog.radioGroup_skillLevel.checkedRadioButtonId)
                     when(selectedRadioButton.id){
-                        R.id.radioButton_beginner -> skillLevel = "BEGINNER"
-                        R.id.radioButton_intermediate -> skillLevel = "INTERMEDIATE"
-                        R.id.radioButton_proficient -> skillLevel = "SkillLevel.PROFICIENT"
-                        R.id.radioButton_advanced -> skillLevel = "ADVANCED"
-                        R.id.radioButton_expert -> skillLevel = "EXPERT"
+                        R.id.radioButton_beginner -> skillLevel = SkillLevel.BEGINNER
+                        R.id.radioButton_intermediate -> skillLevel = SkillLevel.INTERMEDIATE
+                        R.id.radioButton_proficient -> skillLevel = SkillLevel.PROFICIENT
+                        R.id.radioButton_advanced -> skillLevel = SkillLevel.ADVANCED
+                        R.id.radioButton_expert -> skillLevel = SkillLevel.EXPERT
                     }
                     val peopleFirebaseInput = Person(name, skillLevel, true)
                     peopleRef.child("${Date().time}").setValue(peopleFirebaseInput)

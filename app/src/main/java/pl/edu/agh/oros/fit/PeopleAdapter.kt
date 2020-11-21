@@ -3,10 +3,10 @@ package pl.edu.agh.oros.fit
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
-import android.widget.Switch
 import android.widget.TextView
 import androidx.appcompat.widget.SwitchCompat
 import androidx.recyclerview.widget.RecyclerView
+import pl.edu.agh.oros.fit.modules.Person
 
 class PeopleAdapter(private val peopleList: ArrayList<Person>): RecyclerView.Adapter<PeopleViewHolder>(){
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): PeopleViewHolder {
@@ -22,7 +22,7 @@ class PeopleAdapter(private val peopleList: ArrayList<Person>): RecyclerView.Ada
     override fun onBindViewHolder(holder: PeopleViewHolder, position: Int) {
         holder.nameTextView.text = peopleList[holder.adapterPosition].name
         holder.levelTextView.text = peopleList[holder.adapterPosition].level.toString()
-        holder.stateSwitch.isChecked = peopleList[holder.adapterPosition].state
+        holder.stateSwitch.isChecked = peopleList[holder.adapterPosition].active
     }
 }
 
